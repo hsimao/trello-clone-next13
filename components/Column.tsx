@@ -37,7 +37,7 @@ function Column({ id, todos, index }: Props) {
               >
                 <h2 className="flex justify-between font-bold text-xl p-2">
                   {idToColumnText[id]}
-                  <span className="text-gray-500 bg-gray rounded-full px-2 py-2 text-sm">
+                  <span className="text-gray-500 bg-gray-200 rounded-full px-2 py-1 text-sm font-normal">
                     {todos.length}
                   </span>
                 </h2>
@@ -55,8 +55,8 @@ function Column({ id, todos, index }: Props) {
                           index={index}
                           id={id}
                           innerRef={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
+                          draggableProps={provided.draggableProps}
+                          dragHandleProps={provided.dragHandleProps}
                         />
                       )}
                     </Draggable>
